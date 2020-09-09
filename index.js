@@ -125,11 +125,17 @@ Hint: You can use .splice() for this
 
 */
 
-function removeFlavorByName(myArray, flavorToRemove){
 
-    const indexOfFlavorToRemove = myArray.findIndex(flavorToRemove); // locating the index of flavor to be removed
-    myArray.splice(indexOfFlavorToRemove, 1);
+
+function removeFlavorByName(myArray, flavorToRemove){
+    for(i=0; i < myArray.length; i++) {
+        if(myArray[i].includes(flavorToRemove)) {
+            myArray.splice(i, 1);
+            
+        } 
+    } console.log(myArray);
 }
+
 console.log("Answer to Task 5: ");
 removeFlavorByName(originalFlavors, "Vanilla");
 
@@ -141,11 +147,17 @@ Your function should accept:
 
 and should return a new array that is identical to the old array. You can name the new array however you'd like. */
 
-function copy(/*code here*/){
+const originalFlavorsCopy = [];
 
-    /*code here*/
+function copy(newArray, origArray){
 
+    newArray = [...origArray]; 
+    console.log(newArray);
 }
+
+console.log("Answer to Task 6: ");
+
+copy(originalFlavorsCopy, originalFlavors);
 
 /* Task 7: July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. Write a function that checks every item in the array for a given string and returns a new array called filteredArray with just these values. Rather than hardcoding "chocolate" into your function, pass a string as a parameter, and invoke with the argument "chocolate". This way you could also filter for "Vanilla", "Sherbert", etc. when those holidays roll around.
 
