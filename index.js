@@ -174,11 +174,21 @@ DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem.
 
 hint - you can use the .includes method to help you solve this */
 
-function filterByWord(/*code here*/){
+function filterByWord(myArray, searchTerm){
+    const filteredArray = [];
 
-    /*code here*/
+    for(i=0; i < myArray.length; i++) {
+        
+        if(myArray[i].includes(searchTerm)) {
+            filteredArray.unshift(myArray[i]);
+        }
+    }  console.log(filteredArray); // return filteredArray;
 
 }
+
+console.log("Answer to Task 7: ");
+filterByWord(originalFlavors, "Chocolate");
+
 
 
 
