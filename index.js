@@ -221,6 +221,7 @@ function getAverageWordLength(anyArray){
     console.log(theAverage);
 }
 
+console.log("Answer to Stretch question #1: ");
 getAverageWordLength(originalFlavors);
 
 
@@ -305,8 +306,24 @@ var regionalFlavors = ["Pink Bubblegum",
     "Chocolate Chocolate Chip Cheesecake",
     "Caramel 'n' Cookies"]
 
-function getRandomFlavors(/*code here*/){
 
-    /*code here*/
+ var random31Flavors = [];
+
+function getRandomFlavors(array1, array2, array3, array4){
+
+    while (random31Flavors.length < 31) {
+        
+        arrayList = [array1, array2, array3, array4]
+        var i = Math.floor(Math.random()*4); // create random index
+        
+        randomArray = arrayList[i];  // pick an array at random
+        
+        var i = Math.floor(Math.random()*31); // Generate new index for the length of the array
+        randomFlavor = randomArray[i]; // pick item / flavor from the randomArray with newly generated random index and assign it to randomFlavor.
+        random31Flavors.unshift(randomFlavor);  //  Finally, add the random flavor to random31Flavors
+    } console.log(random31Flavors)
 
 }
+
+console.log("Answer to Stretch question #2: ");
+getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors);
