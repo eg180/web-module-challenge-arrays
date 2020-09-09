@@ -31,7 +31,7 @@ var originalFlavors = ["Banana Nut Fudge",
     "Vanilla Burnt Almond"];
 
 
-console.log("Original array: ")
+console.log("Original array: ");
 console.log(originalFlavors) // printing originalFlavors so we can see change over time from original.
 
 /* Task 1: Confirm that the array is exactly 31 flavors. Your function should accept:
@@ -49,7 +49,7 @@ function is31Flavors(myArray){
     console.log(myArray.length == 31);
 
 }
-console.log("Answer to Task 1: ")
+console.log("Answer to Task 1: ");
 is31Flavors(originalFlavors) // returns true
 
 /* Task 2: Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -69,7 +69,7 @@ function addFlavor(myNewFlavor, myArray){
     console.log(myArray);
 }
 
-console.log("Answer to Task 2: ")
+console.log("Answer to Task 2: ");
 addFlavor("Rainbow Sherbert", originalFlavors);
 
 
@@ -90,7 +90,7 @@ function removeLastFlavor(myArray){
 
 }
 
-console.log("Answer to Task 3: ")
+console.log("Answer to Task 3: ");
 
 removeLastFlavor(originalFlavors);
 
@@ -103,11 +103,14 @@ Your function should accept:
 
 For example, getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully. */
 
-function getFlavorByIndex(/*code here*/){
+function getFlavorByIndex(myArray, indexNumber){
 
-    /*code here*/
+    console.log(myArray[indexNumber]);
 
 }
+
+console.log("Answer to Task 4: ");
+getFlavorByIndex(originalFlavors, 2);
 
 /* Task 5: As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, as opposed to just arbitrarily removing the first or last flavor. Your task is to get an index by flavor name, and remove that flavor from the array. 
 
@@ -122,12 +125,13 @@ Hint: You can use .splice() for this
 
 */
 
-function removeFlavorByName(/*code here*/){
+function removeFlavorByName(myArray, flavorToRemove){
 
-    /*code here*/
-
+    const indexOfFlavorToRemove = myArray.findIndex(flavorToRemove); // locating the index of flavor to be removed
+    myArray.splice(indexOfFlavorToRemove, 1);
 }
-
+console.log("Answer to Task 5: ");
+removeFlavorByName(originalFlavors, "Vanilla");
 
 /* Task 6: With all of these changes going on, we don't want to lose track of the actual, original 31 flavors. Write a function called copy that makes a copy of the array. 
 
